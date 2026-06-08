@@ -16,7 +16,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .landingPageContainer nav h2 {
@@ -26,9 +27,19 @@
 
 .landingPageContainer nav .navlist {
   display: flex;
-  gap: 1.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   cursor: pointer;
+  justify-content: flex-end;
+}
 
+.landingPageContainer nav .navlist p,
+.landingPageContainer nav .navlist div {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .landingMainContainer {
@@ -311,6 +322,23 @@
 }
 
 @media (max-width: 768px) {
+  .landingPageContainer nav {
+    justify-content: center;
+  }
+
+  .landingPageContainer nav .navlist {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .landingPageContainer nav h2 {
+    font-size: 1.45rem;
+  }
+
+  .material-symbols-outlined {
+    font-size: 18px;
+  }
+
   .landingPageContainer {
     width: 100%;
     min-height: 100vh;

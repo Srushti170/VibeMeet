@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { Snackbar } from '@mui/material';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import '../styles/authentication.css';
@@ -72,7 +69,7 @@ export default function Authentication() {
                         {formState === 0 ? "Welcome Back" : "Join VibeMeet"}
                     </h1>
                     <p className="auth-card-subtitle">
-                        Simple and friendly video calls for everyone.
+                        Simple, friendly video calls for staying close.
                     </p>
 
                     <form className="auth-form" onSubmit={handleAuth}>
@@ -80,9 +77,6 @@ export default function Authentication() {
                             <div className="auth-input-group">
                                 <label className="auth-label" htmlFor="fullName">Full Name</label>
                                 <div className="auth-input-wrapper">
-                                    <span className="auth-input-icon">
-                                        <AccountCircleOutlinedIcon fontSize="small" />
-                                    </span>
                                     <input
                                         id="fullName"
                                         type="text"
@@ -99,9 +93,6 @@ export default function Authentication() {
                         <div className="auth-input-group">
                             <label className="auth-label" htmlFor="username">Username</label>
                             <div className="auth-input-wrapper">
-                                <span className="auth-input-icon">
-                                    <AlternateEmailIcon fontSize="small" />
-                                </span>
                                 <input
                                     id="username"
                                     type="text"
@@ -117,9 +108,6 @@ export default function Authentication() {
                         <div className="auth-input-group">
                             <label className="auth-label" htmlFor="password">Password</label>
                             <div className="auth-input-wrapper">
-                                <span className="auth-input-icon">
-                                    <LockOutlinedIcon fontSize="small" />
-                                </span>
                                 <input
                                     id="password"
                                     type={showPassword ? "text" : "password"}

@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .landingPageContainer nav {
@@ -66,6 +67,7 @@
   padding: 32px 24px 48px;
   position: relative;
   overflow: hidden;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .historyPageContainer::before {
@@ -198,7 +200,7 @@
   min-height: 100vh;
   background: #060e14;
   color: #f8fafc;
-  font-family: 'Geist', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -375,4 +377,4 @@
     font-size: 1rem;
   }
 }
-
+

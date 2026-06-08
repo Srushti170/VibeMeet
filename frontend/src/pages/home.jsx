@@ -87,10 +87,10 @@ function HomeComponent() {
                     <div className="flex flex-col items-start gap-4 mb-8">
 
                         <h1 className="text-3xl md:text-4xl font-bold text-on-surface leading-tight max-w-3xl">
-                            Connect, collaborate, and communicate in real time from anywhere.
+                            Connect with your loved ones and stay close from anywhere.
                         </h1>
                         <p className="text-base md:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                            High-fidelity video infrastructure for secure global collaboration. Engineered for zero-latency professional environments.
+                            Simple, reliable video calls for sharing moments, catching up, and staying connected every day.
                         </p>
                     </div>
 
@@ -102,7 +102,7 @@ function HomeComponent() {
                                 <span className="material-symbols-outlined text-primary text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>video_call</span>
                             </div>
                             <h3 className="text-xl md:text-2xl font-bold text-on-surface mb-3">New Meeting</h3>
-                            <p className="text-sm md:text-base text-on-surface-variant mb-8 leading-relaxed">Deploy a dedicated encrypted session with one click.</p>
+                            <p className="text-sm md:text-base text-on-surface-variant mb-8 leading-relaxed">Start a warm, secure room in one tap and invite everyone instantly.</p>
                             <button
                                 onClick={handleStartNewMeeting}
                                 className="w-full btn-obsidian py-3.5 rounded-xl text-sm font-bold uppercase tracking-widest cursor-pointer shadow-lg shadow-primary/10"
@@ -117,7 +117,7 @@ function HomeComponent() {
                                 <span className="material-symbols-outlined text-secondary text-[28px]">keyboard</span>
                             </div>
                             <h3 className="text-xl md:text-2xl font-bold text-on-surface mb-3">Join Meeting</h3>
-                            <p className="text-sm md:text-base text-on-surface-variant mb-8 leading-relaxed">Enter a secure access code to enter an active room.</p>
+                            <p className="text-sm md:text-base text-on-surface-variant mb-8 leading-relaxed">Enter a room code to jump into your next conversation with ease.</p>
                             <div className="w-full flex gap-3">
                                 <input
                                     className="flex-1 bg-background border border-outline-variant/30 rounded-xl py-3 px-4 text-on-surface placeholder:text-outline/40 focus:outline-none focus:border-primary transition-all font-semibold uppercase tracking-wider text-sm"

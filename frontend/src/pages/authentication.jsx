@@ -72,7 +72,7 @@ export default function Authentication() {
                         {formState === 0 ? "Welcome Back" : "Join VibeMeet"}
                     </h1>
                     <p className="auth-card-subtitle">
-                        Professional video communication redefined.
+                        Simple and friendly video calls for everyone.
                     </p>
 
                     <form className="auth-form" onSubmit={handleAuth}>

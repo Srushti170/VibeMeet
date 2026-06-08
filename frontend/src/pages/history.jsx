@@ -98,7 +98,7 @@ export default function History() {
                 {/* Page Header */}
                 <header className="mb-12 text-center sm:text-left">
                     <h1 className="text-3xl md:text-4xl font-bold text-on-surface mb-2">Meeting History</h1>
-                    <p className="text-base text-on-surface-variant leading-relaxed">Review your past connections and professional session durations.</p>
+                    <p className="text-base text-on-surface-variant leading-relaxed">Review your past conversations and memorable session moments.</p>
                 </header>
 
                 {/* Grid Layout */}

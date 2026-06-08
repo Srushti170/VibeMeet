@@ -1,7 +1,9 @@
 .landingPageContainer {
   width: 100vw;
   height: 100vh;
-  background: url("/public/bg.png");
+  background:
+    radial-gradient(circle at top, rgba(255, 152, 57, 0.12), transparent 25%),
+    linear-gradient(135deg, #060816 0%, #111827 45%, #1f2937 100%);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;

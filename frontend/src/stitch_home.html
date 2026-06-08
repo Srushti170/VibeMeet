@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VibeMeet - Obsidian Stream Collaboration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Geist for a modern, sleek look -->
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ede0ff",
+                    "secondary-container": "#1e293b",
+                    "surface-container-lowest": "#060e14",
+                    "on-tertiary-fixed": "#301400",
+                    "on-primary": "#ffffff",
+                    "outline": "#4a5568",
+                    "primary-fixed-dim": "#d2bbff",
+                    "on-secondary-fixed": "#e2e8f0",
+                    "outline-variant": "#2d3748",
+                    "error-container": "#93000a",
+                    "error": "#ffb4ab",
+                    "primary": "#3b82f6",
+                    "inverse-primary": "#2563eb",
+                    "secondary-fixed-dim": "#94a3b8",
+                    "tertiary-container": "#2d3748",
+                    "primary-fixed": "#dbeafe",
+                    "on-primary-fixed-variant": "#1e40af",
+                    "tertiary-fixed": "#e2e8f0",
+                    "primary-container": "#1e3a8a",
+                    "surface-container-high": "#1a202c",
+                    "on-tertiary-fixed-variant": "#4a5568",
+                    "tertiary-fixed-dim": "#cbd5e1",
+                    "surface-container": "#0f172a",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#f8fafc",
+                    "secondary": "#64748b",
+                    "on-background": "#f8fafc",
+                    "on-surface-variant": "#94a3b8",
+                    "inverse-on-surface": "#0f172a",
+                    "surface-bright": "#1e293b",
+                    "surface-tint": "#3b82f6",
+                    "surface-container-low": "#0b1221",
+                    "on-secondary-fixed-variant": "#475569",
+                    "on-error": "#690005",
+                    "surface-variant": "#1e293b",
+                    "on-secondary": "#f8fafc",
+                    "on-primary-fixed": "#1e3a8a",
+                    "surface-container-highest": "#2d3748",
+                    "surface": "#060e14",
+                    "secondary-fixed": "#f1f5f9",
+                    "on-tertiary": "#f8fafc",
+                    "on-surface": "#f8fafc",
+                    "on-secondary-container": "#f1f5f9",
+                    "background": "#060e14",
+                    "tertiary": "#94a3b8",
+                    "surface-dim": "#060e14",
+                    "on-tertiary-container": "#f1f5f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.375rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "section-gap": "100px"
+            },
+            "fontFamily": {
+                    "label-md": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-caps": ["JetBrains Mono"],
+                    "display-lg": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md": ["Geist"],
+                    "body-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background: #060e14;
+        color: #f8fafc;
+        font-family: 'Geist', sans-serif;
+        overflow-x: hidden;
+      }
+      
+      .obsidian-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+                    #060e14;
+      }
+
+      .nexus-card {
+        background: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.2s ease;
+      }
+
+      .nexus-card:hover {
+        border-color: rgba(59, 130, 246, 0.3);
+        background: #1e293b;
+      }
+
+      .btn-obsidian {
+        background: #3b82f6;
+        color: #ffffff;
+        transition: all 0.2s ease;
+      }
+
+      .btn-obsidian:hover {
+        background: #2563eb;
+        transform: translateY(-1px);
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="selection:bg-primary/30">
+<div class="obsidian-bg"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+<div class="max-w-container-max mx-auto px-margin-desktop h-16 flex justify-between items-center">
+<!-- Brand Logo -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]" style="font-variation-settings: 'FILL' 1;">videocam</span>
+</div>
+<span class="text-headline-md font-bold text-on-surface tracking-tight">VibeMeet</span>
+</div>
+<!-- Nav Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                History
+            </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Logout
+            </a>
+</div>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative min-h-screen pt-32 pb-20 px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+<!-- Hero Section -->
+<div class="max-w-[1200px] w-full mb-20">
+<div class="flex flex-col items-start gap-4 mb-8">
+<div class="px-3 py-1 rounded bg-primary/10 border border-primary/20">
+<span class="text-label-caps font-label-caps text-primary uppercase tracking-wider">Enterprise Performance</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-on-surface leading-tight max-w-3xl">
+                The Obsidian Standard in <span class="text-primary">Communication</span>.
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl">
+                High-fidelity video infrastructure for secure global collaboration. Engineered for zero-latency professional environments.
+            </p>
+</div>
+<!-- Main Actions Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-4xl">
+<!-- Start Meeting Card -->
+<div class="nexus-card p-10 rounded-xl flex flex-col items-start">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">video_call</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-3">New Meeting</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-10">Deploy a dedicated encrypted session with one click.</p>
+<button class="w-full btn-obsidian py-3.5 rounded text-body-md font-bold uppercase tracking-widest">
+                    Start Session
+                </button>
+</div>
+<!-- Join with Code Card -->
+<div class="nexus-card p-10 rounded-xl flex flex-col items-start">
+<div class="w-12 h-12 rounded bg-secondary/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-[28px]">keyboard</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-3">Join Meeting</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-10">Enter a secure access code to enter an active room.</p>
+<div class="w-full flex gap-2">
+<input class="flex-1 bg-background border border-outline-variant rounded py-3 px-4 text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-all font-label-caps" placeholder="CODE: ABC-123-XYZ" type="text"/>
+<button class="w-12 h-12 bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-colors text-primary flex items-center justify-center rounded">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats & Features Section -->
+<div class="max-w-container-max w-full mt-20 grid grid-cols-1 md:grid-cols-12 gap-gutter border-t border-white/5 pt-20">
+<div class="md:col-span-8 bg-surface-container-high rounded-xl overflow-hidden min-h-[440px] relative">
+<img class="w-full h-full object-cover grayscale opacity-50 contrast-125" data-alt="A clean, professional video conferencing interface featuring a dark obsidian theme. The layout is structured with a minimalist grid of participant video feeds, a sleek control bar at the bottom with white icons, and subtle blue accent lighting." src="https://lh3.googleusercontent.com/aida/AP1WRLvl6f709AHPOYMLY2H4hK8zCioNJM2aNzyymbYGhEC3LTwxdXpODEFq10-sZpUhp2SNY4uUU8gnPpZc3bEJYkMpcpfempt70aP2OTL8cVVObHAm5L_hP7I7ajlUbzp3NRyUAXak5oB1WtkKnanBxffR1Ga4Uk83tJJKxHO03CEkyqfkV5X5AbOnHUiVAxIhO6OcI-B2SOaDx5mVIehDhqJp_Et6Fp1ZK5dyf-opORfGWqyeWh6xPHs6xg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-10 left-10 right-10">
+<div class="flex items-center gap-4 mb-4">
+<span class="px-2 py-0.5 border border-white/20 text-white/60 font-label-caps text-[10px] uppercase">4K 60FPS</span>
+<span class="px-2 py-0.5 border border-white/20 text-white/60 font-label-caps text-[10px] uppercase">Nexus Protocol</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-white mb-2">Nexus Performance</h2>
+<p class="text-body-md font-body-md text-white/50 max-w-lg">Designed for mission-critical operations where clarity and reliability are the only metrics that matter.</p>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 nexus-card rounded-xl p-10 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-6 text-[32px]">verified_user</span>
+<h4 class="text-headline-md font-headline-md text-on-surface mb-3">Military-Grade</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">AES-256 bit encryption active by default on all streams and data transfers.</p>
+</div>
+<div class="flex -space-x-2 mt-8">
+<img alt="User 1" class="h-8 w-8 rounded bg-gray-800 border border-background" src="https://lh3.googleusercontent.com/aida/AP1WRLvsS4OlIWC_U11FG5P8GHBtF9xwJuJZkk-yo8EJVcMobOOElPVPJqAIWbRSK98TWYiQO8s_w4e6I92ok3Bak3CKF4IDIXX1ARjgrvcJENF9M-Xrrr7S_w_3cnZpB-RJH141b64vMPerv-C7W1Tg8OX-UaVlL8xgB_9nErbgIRNg6hwdE2BkyYAyGfqMGOchLGR1tpYu3YBUBCAdKw13sL1TKKfv2m0FX0vUTAlrDt6yK8epxrlO06E41-0"/>
+<img alt="User 2" class="h-8 w-8 rounded bg-gray-800 border border-background" src="https://lh3.googleusercontent.com/aida/AP1WRLsInYMno9aQQmTYEFb1X9qECLnUg-V7Da5P67LkjM3HhgfXFuye_g5TuWXTP1JF7s7oAEx8oY1Jy1f-rqA5XWidyKFG7kAi3Z5JLQm4odRoki-dwYOorPcP6yvt55Y9ubk2cY8VUp8z-vSz2pKLMc3sAafUpPdVGyqakbqFd1GmaRoX3Vyp4c4fqnn-eOJPptC7N3r32xkHObkKLUCZXO7RaRen2Jk-1jy7Cu4HylRMXztblpDBKlm_KJc"/>
+<div class="h-8 w-8 rounded border border-background bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+24</div>
+</div>
+</div>
+<div class="flex-1 nexus-card rounded-xl p-10 flex flex-col justify-center border-l-2 border-primary">
+<span class="text-label-caps font-label-caps text-primary mb-2 uppercase tracking-widest">Uptime Index</span>
+<div class="text-[40px] font-bold text-on-surface tracking-tighter mb-1">99.99%</div>
+<p class="text-body-md font-body-md text-on-surface-variant">Global infrastructure availability.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-white/5">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-6">
+<span class="text-label-caps font-bold text-on-surface uppercase tracking-widest">VibeMeet</span>
+<span class="text-label-md text-on-surface-variant opacity-50">© 2024 VibeMeet Enterprise.</span>
+</div>
+<div class="flex gap-10">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Security</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Protocol</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Network</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+<script>
+    // Minimal scroll effect for the header
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 20) {
+            nav.classList.add('bg-background/95');
+            nav.classList.remove('h-16');
+            nav.classList.add('h-14');
+        } else {
+            nav.classList.remove('bg-background/95');
+            nav.classList.add('h-16');
+            nav.classList.remove('h-14');
+        }
+    });
+</script>
+</body></html>

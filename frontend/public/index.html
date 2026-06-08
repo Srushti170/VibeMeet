@@ -25,6 +25,138 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- Stitch Design Stylesheets & Fonts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        corePlugins: {
+          preflight: false,
+        },
+        theme: {
+          extend: {
+            "colors": {
+              "primary-container": "#558dff",
+              "primary-fixed": "#d9e2ff",
+              "surface-variant": "#333539",
+              "on-secondary-fixed-variant": "#005236",
+              "surface-container-high": "#282a2e",
+              "inverse-primary": "#0058ca",
+              "on-error-container": "#ffdad6",
+              "secondary-container": "#00a572",
+              "inverse-on-surface": "#2f3035",
+              "tertiary-container": "#ff516a",
+              "primary-fixed-dim": "#b0c6ff",
+              "surface-bright": "#37393e",
+              "error": "#ffb4ab",
+              "on-tertiary-container": "#5b0017",
+              "on-tertiary": "#67001b",
+              "background": "#111317",
+              "surface-tint": "#b0c6ff",
+              "surface-container-highest": "#333539",
+              "on-secondary": "#003824",
+              "tertiary": "#ffb2b7",
+              "on-primary-container": "#002761",
+              "surface-dim": "#111317",
+              "outline-variant": "#424654",
+              "on-secondary-container": "#00311f",
+              "secondary-fixed-dim": "#4edea3",
+              "surface-container": "#1e2024",
+              "surface-container-lowest": "#0c0e12",
+              "on-primary-fixed": "#001944",
+              "secondary-fixed": "#6ffbbe",
+              "outline": "#8c90a0",
+              "on-primary": "#002d6e",
+              "tertiary-fixed-dim": "#ffb2b7",
+              "error-container": "#93000a",
+              "on-surface-variant": "#c2c6d7",
+              "on-tertiary-fixed-variant": "#92002a",
+              "on-background": "#e2e2e8",
+              "surface-container-low": "#1a1c20",
+              "on-surface": "#e2e2e8",
+              "on-primary-fixed-variant": "#00429b",
+              "tertiary-fixed": "#ffdadb",
+              "surface": "#111317",
+              "on-secondary-fixed": "#002113",
+              "primary": "#b0c6ff",
+              "inverse-surface": "#e2e2e8",
+              "on-error": "#690005",
+              "secondary": "#4edea3",
+              "on-tertiary-fixed": "#40000d",
+              
+              /* Galactic theme colors for Home and History */
+              "primary-galactic": "#d2bbff",
+              "secondary-galactic": "#ffafd3",
+              "background-galactic": "#0b1326",
+              "surface-galactic": "#0b1326",
+              "surface-container-lowest-galactic": "#060e20",
+              "surface-container-low-galactic": "#131b2e",
+              "surface-container-galactic": "#171f33",
+              "surface-container-high-galactic": "#222a3d",
+              "surface-container-highest-galactic": "#2d3449",
+              "on-surface-galactic": "#dae2fd",
+              "on-surface-variant-galactic": "#ccc3d8",
+              "outline-galactic": "#958da1",
+              "outline-variant-galactic": "#4a4455",
+              "primary-container-galactic": "#7c3aed",
+              "on-primary-container-galactic": "#ede0ff",
+              "secondary-container-galactic": "#85145a",
+              "on-secondary-fixed-variant-galactic": "#85145a",
+              "on-secondary-container-galactic": "#ff93c8",
+              "on-tertiary-galactic": "#4f2500",
+              "tertiary-galactic": "#ffb783",
+              "on-tertiary-container-galactic": "#ffdfcb"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "base": "4px",
+              "video-gutter": "12px",
+              "xl": "2.5rem",
+              "sm": "0.5rem",
+              "control-bar-height": "80px",
+              "md": "1rem",
+              "xs": "0.25rem",
+              "container-padding": "24px",
+              "lg": "1.5rem"
+            },
+            "fontFamily": {
+              "mono-label": ["Geist"],
+              "label-sm": ["Geist"],
+              "headline-lg": ["Geist"],
+              "headline-md": ["Geist"],
+              "body-lg": ["Inter"],
+              "headline-lg-mobile": ["Geist"],
+              "display-lg": ["Geist"],
+              "body-md": ["Inter"],
+              "label-md": ["Geist"]
+            },
+            "fontSize": {
+              "mono-label": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+              "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+              "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+              "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+              "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -9,7 +9,8 @@ export default function LandingPage() {
     return (
         <div className='landingPageContainer'>
             <nav>
-                <div className='navHeader'>
+                <div className='navHeader' style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <img src="/logo.png" alt="VibeMeet Logo" style={{ height: '32px', width: '32px', borderRadius: '8px' }} />
                     <h2>VibeMeet</h2>
                 </div>
                 <div className='navlist'>
